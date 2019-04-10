@@ -1,0 +1,13 @@
+{
+  "index.html": {
+    "resources": [
+      "sy.html"
+    ],
+    "refer": [
+      "kf.html",
+      "xc.html",
+      "sy.html",
+      "wd.html"
+    ]
+  }
+}

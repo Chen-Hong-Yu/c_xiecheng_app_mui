@@ -1,0 +1,259 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/iconfont.css" />
+		<script src="js/mui.min.js"></script>
+		<style>
+			body{
+				background-color: #383964 !important;	
+			}
+		</style>
+	</head>
+
+	<body class="kf">
+		<!-- 头部 -->
+		<header class="mui-bar mui-bar-nav kf_header_bgcolor">
+			<a href="#" class="mui-pull-left mui-icon mui-icon-phone"></a>
+		    <h1 class="mui-title" id="box">
+		    	<a href="#" class="div">订单服务</a>
+		    	<a href="#">客服咨询</a>
+		    </h1>
+		    <a href="#" class="mui-pull-right mui-icon mui-icon-refresh"></a>
+		</header>
+		
+		<!-- 主体 -->
+		<div class="mui-content">
+		    <div class="kf_box_a">
+		    	<div class="options">
+		    		<p>
+		    			<span class="mui-icon iconfont iconshaixuan"></span>
+		    			<span>筛选</span>
+		    		</p>
+		    		<p>
+		    			<span class="mui-icon iconfont icontubiao-"></span>
+		    			<span>出发时间</span>
+		    		</p>
+		    		<p>
+		    			<span class="mui-icon iconfont iconyouxiaodan"></span>
+		    			<span>有效订单</span>
+		    		</p>
+		    	</div>
+		    	
+		    	<!-- 订单列表 -->
+		    	<div class="order"></div>
+		    </div>
+		    
+		    <div class="kf_box_a" style="padding: 10px 0;">
+		    	<div class="zixun">
+					<div class="mui-row">
+				        
+				    </div>
+		    	</div>
+		    </div>
+		</div>
+		
+		<script type="text/javascript" src="js/jquery/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="js/castapp.js" ></script>
+		<script type="text/javascript">
+			// 页面初始化
+			ca.init();
+			
+			menuList();
+			orderList();
+			kfList();
+			
+			// 菜单切换
+			function menuList(){
+				var box = ca.id('box');
+				var box1 = ca.tagName(box, 'a');
+				var boxa = ca.className('kf_box_a');
+				
+				for(var i = 0; i < box1.length; i++){
+					(function(index){
+						box1[i].onclick = function(){
+							for(var j = 0; j < boxa.length; j++){
+								box1[j].className = "";
+								boxa[j].style.display = "none";
+							}
+							
+							box1[index].className = "div";
+							boxa[index].style.display = "block";
+						}
+					})(i)
+				}
+			}
+		
+			// 加载订单服务模块信息
+			function orderList(){
+				var orderListHtml = "";
+				for(var a = 0; a < 5; a++){
+					orderListHtml += '<div class="order_list">'
+							+ '<p>'
+							+ 	'<span class="p_l">湛江西 → 北京西</span>'
+							+ 	'<span class="p_r" style="color: #fa972c;">￥399.5</span>'
+							+ '</p>'
+							+ '<p class="order_msg">'
+							+  	'<span>2019-2-21</span>'
+							+  	'<span>11:00</span>'
+							+  	'<span style="background: #ebedff; border-bottom: 1px dotted #d8d8d8; padding: 0 2px; border-radius: 3px; color: #fff;">至</span>'
+							+  	'<span>19:00</span>'
+							+  	'<span>G500</span>'
+							+  	'<span style="color: #959595; position: absolute; right: 0; margin: 0;">购票成功</span>'
+							+ '</p>'
+							+ '<p class="bottom_btn">'
+							+	'<span>退票</span>'
+							+	'<span style="background: #0d94d1; color: #fff;">查询</span>'
+							+	'<span>订单</span>'
+							+ '</p>'
+						 + '</div>';
+				}
+				
+				$(".order").append(orderListHtml);  
+			}
+		
+			// 加载客服咨询模块信息
+			function kfList(){
+				var kfListHtml = "";
+				var kfList = [
+					{
+						id: 1, 
+						icon: "iconjiudian",
+						name: "酒店",
+						bgColor: "#ffa500",
+					},
+					{
+						id: 2, 
+						icon: "iconfeiji",
+						name: "国内机票",
+						bgColor: "#4f9ff9",
+					},
+					{
+						id: 3, 
+						icon: "iconfeiji1",
+						name: "国际机票",
+						bgColor: "#4ac3fb",
+					},
+					{
+						id: 4, 
+						icon: "iconhuochepiao",
+						name: "火车票",
+						bgColor: "#05aef4",
+					},
+					{
+						id: 5, 
+						icon: "icondaba",
+						name: "汽车票",
+						bgColor: "#4ac3fb",
+					},
+					{
+						id: 6, 
+						icon: "icondaohang",
+						name: "自由行",
+						bgColor: "#23cb77",
+					},
+					{
+						id: 7, 
+						icon: "iconlingdaoli",
+						name: "跟团游",
+						bgColor: "#3bd6c6",
+					},
+					{
+						id: 8, 
+						icon: "iconzuanshi",
+						name: "会员中心",
+						bgColor: "#fbad25",
+					},
+					{
+						id: 9, 
+						icon: "iconlvyou",
+						name: "周边游",
+						bgColor: "#25cb77",
+					},
+					{
+						id: 10, 
+						icon: "iconqiche",
+						name: "用车",
+						bgColor: "#4f9ff9",
+					},
+					{
+						id: 11, 
+						icon: "iconqianzheng",
+						name: "签证",
+						bgColor: "#fab631",
+					},
+					{
+						id: 12, 
+						icon: "iconwifi",
+						name: "出境WIFI",
+						bgColor: "#fd8a3d",
+					},
+					{
+						id: 13, 
+						icon: "iconscenery",
+						name: "景点门票",
+						bgColor: "#fab631",
+					},
+					{
+						id: 14, 
+						icon: "icondangdi",
+						name: "当地玩乐",
+						bgColor: "#23cb77",
+					},
+					{
+						id: 15, 
+						icon: "iconshinshoplipinqia",
+						name: "礼品卡",
+						bgColor: "#fd8a3d",
+					},
+					{
+						id: 16, 
+						icon: "iconyoulun",
+						name: "邮轮",
+						bgColor: "#3bd6c6",
+					},
+					{
+						id: 17, 
+						icon: "iconhangcheng",
+						name: "行李寄送",
+						bgColor: "#4f9ff9",
+					},
+					{
+						id: 18, 
+						icon: "iconjiudian-A",
+						name: "海外酒店",
+						bgColor: "#fe70a4",
+					},
+					{
+						id: 19, 
+						icon: "iconhuafei",
+						name: "拿去花",
+						bgColor: "#0e95cd",
+					},
+					{
+						id: 20, 
+						icon: "iconliangkeyiwei",
+						name: "企业商旅",
+						bgColor: "#4ac3fb",
+					},
+				];
+			
+				for(var i = 0; i < kfList.length; i++){
+					kfListHtml += '<div class="mui-col-xs-3">'
+									+ '<a>'
+									+ 	'<p><span class="iconfont '+ kfList[i].icon +'" style="background:'+ kfList[i].bgColor +'"></span></p>'
+									+ 	'<p>'+ kfList[i].name +'</p>'
+									+ '</a>'
+								+ '</div>';	
+				}
+				
+				$(".mui-row").append(kfListHtml);
+			}
+		</script>
+	</body>
+</html>

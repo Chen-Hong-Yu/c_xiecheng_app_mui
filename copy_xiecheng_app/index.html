@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script> 
+</head>
+<body>
+	<nav class="mui-bar mui-bar-tab">
+	    <a id="defaultTab" class="mui-tab-item mui-active" href="sy.html">
+	        <span class="mui-icon iconfont iconxiecheng"></span>
+	        <span class="mui-tab-label">首页</span>
+	    </a>
+	    <a class="mui-tab-item" href="xc.html"> 
+	        <span class="mui-icon iconfont iconhangcheng"></span>
+	        <span class="mui-tab-label">行程</span>
+	    </a>
+	    <a class="mui-tab-item" href="kf.html">
+	        <span class="mui-icon iconfont iconkefu"></span>
+	        <span class="mui-tab-label">客服</span>
+	    </a>
+	    <a class="mui-tab-item" href="wd.html">
+	        <span class="mui-icon iconfont iconwode"></span>
+	        <span class="mui-tab-label">我的</span>
+	    </a>
+	</nav>
+	
+	<script type="text/javascript" src="js/castapp.js" ></script>
+	<script type="text/javascript">
+		ca.init();
+		
+		//底部导航链接
+		var pathArray = ["sy.html",'xc.html','kf.html','wd.html'];
+		castapp.tabBar(pathArray);
+	</script>
+</body>
+</html> 

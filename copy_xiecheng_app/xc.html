@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/iconfont.css" />
+		<script src="js/mui.min.js"></script>
+	</head>
+
+	<body>
+		<!-- 头部 -->
+		<header class="mui-bar mui-bar-nav xc-bar-nav" style="background-color: #fff;">
+			<a href="#" class="mui-icon mui-pull-left xc-header-image" style="margin: 0; padding: 10px 0;">
+				<img src="https://lg-5tha8nrc-1257443016.cos.ap-shanghai.myqcloud.com/avatar_4.png"/>
+			</a>
+			<a href="#" class="mui-pull-left" style="margin-top: 15px; margin-left: 5px; color: #666;">花花姐</a>
+		    <!--<h1 class="mui-title">行程</h1>-->
+		    
+		    <a href="#" class="mui-pull-right mui-icon iconfont iconzunguijiyudingzhuanxian" style="color: #ccc; font-size: 24px;"></a>
+		</header>
+		
+		<!-- 主体 -->
+		<div class="mui-content">
+		    <div class="xc-a">
+		    	<img src="images/guanggao/gg9.png"/>
+		    	<p>你还没有行程</p>
+		    	<h5>搜索一段新的旅行吧</h5>
+		    </div>
+		    
+		    <div id="xcList"></div>
+		    
+		    <div class="add">
+		    	<span class="mui-icon mui-icon-plusempty"></span>
+		    </div>
+		</div>
+		
+		<script type="text/javascript" src="js/jquery/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="js/castapp.js"></script>
+		<script type="text/javascript">
+			// mui 初始化
+			mui.init();
+			
+			// 模拟数据
+			var xcList = [
+				{
+					id: 1, 
+					tourTitle: "画面旅拍--迷情考拉，追寻袋鼠，浓情南澳浪漫自驾游", 
+					tourMsg: "澳洲，一个梦想中的国度，让我用镜头展现在大家眼前", 
+					img: "images/guanggao/gg11.png", 
+					userIcon: "https://lg-5tha8nrc-1257443016.cos.ap-shanghai.myqcloud.com/avatar_4.png", 
+					userName: "花瓶在路上 在阿德莱德",
+					readNum: 22110,
+				},
+				{
+					id: 2, 
+					tourTitle: "当你还再去三亚的时候，会玩的人都去这里了", 
+					tourMsg: "这里没有三亚出名，可是美过三亚，趁着熟悉的人还不多，先去探访这座性价比超高的小岛吧！", 
+					img: "images/guanggao/gg10.png", 
+					userIcon: "https://lg-5tha8nrc-1257443016.cos.ap-shanghai.myqcloud.com/avatar_4.png", 
+					userName: "我在三亚小岛等你",
+					readNum: 100,
+				},
+				{
+					id: 3, 
+					tourTitle: "快看|939元就出发，上海飞天津往返机票特价啦|3天轻松自由行。", 
+					tourMsg: "", 
+					img: "images/guanggao/gg12.png", 
+					userIcon: "https://lg-5tha8nrc-1257443016.cos.ap-shanghai.myqcloud.com/avatar_4.png", 
+					userName: "天津特价机票",
+					readNum: 10000,
+				},
+				{
+					id: 4, 
+					tourTitle: "一路向北，许自己一场冰雪童话", 
+					tourMsg: "有生之年，必须给自己一场冰雪童话。", 
+					img: "images/guanggao/gg13.png", 
+					userIcon: "https://lg-5tha8nrc-1257443016.cos.ap-shanghai.myqcloud.com/avatar_4.png", 
+					userName: "多喝喝在天津",
+					readNum: 20703,
+				},
+				{
+					id: 5, 
+					tourTitle: "只需311元，广州白天鹅酒店今夜特惠！", 
+					tourMsg: "超五星级", 
+					img: "images/guanggao/gg14.png", 
+					userIcon: "https://lg-5tha8nrc-1257443016.cos.ap-shanghai.myqcloud.com/avatar_4.png", 
+					userName: "秦禾禾在广州",
+					readNum: 200703,
+				},
+			];
+			
+			$(function(){
+				var html = "";
+				
+				for (var i = 0; i < xcList.length; i++) {
+	                html += '<div class="xc-b">'
+	                        + '<div class="xc-b-t">'
+	                        +  '<div class="xc-b-t-l">'
+	                        +    '<h5>' + xcList[i].tourTitle + '</h5>'
+	                        +	 '<p>' + xcList[i].tourMsg + '</p>'
+	                        +  '</div>'
+	                        +  '<div class="xc-b-t-r"><img src="'+ xcList[i].img +'"/></div>'
+	                        + '</div>'
+	                        + '<div class="xc-b-b">'
+	                        +  '<div class="xc-b-b-l">'
+	                        +    '<img src="'+ xcList[i].userIcon +'"/>'
+	                        +  	 xcList[i].userName
+	                        +  '</div>'
+	                        +  '<div class="xc-b-b-r">'+ xcList[i].readNum +'  阅读</div>'
+	                        + '</div>'
+	                       + '</div>';
+	            }
+	            $("#xcList").append(html);  
+			})
+		</script>
+	</body>
+</html>
